@@ -1,0 +1,8 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+(defun factorial (n &optional (acc 1))
+  "calculate the factorial of the given number"
+  (if (<= n 1)
+      acc
+      factorial (- n 1) (* acc n)))

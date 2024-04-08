@@ -1,0 +1,14 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+(defun length-and-print (lst &optional (len 0))
+  "Calculate the length of a list and print the first and last elements."
+  (cond
+    ((null lst)
+     (format t "Length: ~D~%" len)
+     (when (> len 0)
+       (format t "First Element: ~A~%" (car lst))
+       (format t "Last Element: ~A~%" (car (last lst)))))
+    (t
+     (length-and-print (cdr lst) (+ len 1) lst)))) ;; Pass the original list as an additional parameter
+
